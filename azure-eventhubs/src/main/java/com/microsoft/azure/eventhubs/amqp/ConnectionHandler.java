@@ -9,6 +9,8 @@ import java.util.Map;
 
 import com.microsoft.azure.eventhubs.EventHubClient;
 import com.microsoft.azure.eventhubs.ext.impl.WebSocketImpl;
+import org.apache.qpid.proton.amqp.UnsignedInteger;
+import org.apache.qpid.proton.engine.impl.ConnectionImpl;
 import org.apache.qpid.proton.engine.impl.TransportInternal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,6 +65,7 @@ public final class ConnectionHandler extends BaseHandler {
                     EventHubClient.userAgent.substring(0, AmqpConstants.MAX_USER_AGENT_LENGTH));
         }
         connection.setProperties(connectionProperties);
+        connection.setMaxFrameSize(new UnsignedInteger(4 * 1024));
 
         connection.open();
     }

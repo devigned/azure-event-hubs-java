@@ -33,8 +33,8 @@ public class SessionHandler extends BaseHandler {
     private final Consumer<Session> onRemoteSessionOpen;
     private final BiConsumer<ErrorCondition, Exception> onRemoteSessionOpenError;
 
-    private boolean sessionCreated = false;
-    private boolean sessionOpenErrorDispatched = false;
+    private volatile boolean sessionCreated = false;
+    private volatile boolean sessionOpenErrorDispatched = false;
 
     public SessionHandler(final String entityName, final Consumer<Session> onRemoteSessionOpen, final BiConsumer<ErrorCondition, Exception> onRemoteSessionOpenError) {
         this.entityName = entityName;

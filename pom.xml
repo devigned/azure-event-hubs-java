@@ -38,7 +38,9 @@
 	 	<dependency>
 	 	    <groupId>org.apache.qpid</groupId>
 	 	    <artifactId>proton-j</artifactId>
-	 	    <version>${proton-j-version}</version>
+			<scope>system</scope>
+			<systemPath>/Users/Sree/gits/qpid-proton-j/proton-j/target/proton-j-0.25.0-SNAPSHOT.jar</systemPath>
+	 	    <version>0.25.0-SNAPSHOT</version>
 	 	</dependency>   	
 		<dependency>
 	 	    <groupId>junit</groupId>
