@@ -102,7 +102,7 @@ public class ReceiveParallelManualTest extends ApiTestBase
 	// Run this test manually and introduce network failures to test
 	// send/receive code is resilient to n/w failures 
 	// and continues to run once the n/w is back online
-	@Test()
+	// @Test()
 	public void testReceiverStartOfStreamFilters() throws Exception
 	{
         new Thread(new PRunnable("0")).start();

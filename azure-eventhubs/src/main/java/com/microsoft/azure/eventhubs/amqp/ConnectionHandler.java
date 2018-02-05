@@ -64,9 +64,8 @@ public final class ConnectionHandler extends BaseHandler {
                     EventHubClient.userAgent :
                     EventHubClient.userAgent.substring(0, AmqpConstants.MAX_USER_AGENT_LENGTH));
         }
-        connection.setProperties(connectionProperties);
-        connection.setMaxFrameSize(new UnsignedInteger(4 * 1024));
 
+        connection.setProperties(connectionProperties);
         connection.open();
     }
 
@@ -77,7 +76,7 @@ public final class ConnectionHandler extends BaseHandler {
 
         boolean useWebSockets = true; // todo: pass from ehclient
         if (useWebSockets) {
-            WebSocketImpl webSocket = new WebSocketImpl();
+            final WebSocketImpl webSocket = new WebSocketImpl();
             webSocket.configure(
                     event.getConnection().getHostname(), "/$servicebus/websocket",0, "AMQPWSB10", null, null);
 
@@ -86,9 +85,6 @@ public final class ConnectionHandler extends BaseHandler {
 
         final SslDomain domain = makeDomain(SslDomain.Mode.CLIENT);
         transport.ssl(domain);
-
-        Sasl sasl = transport.sasl();
-        sasl.setMechanisms("ANONYMOUS");
     }
 
     @Override
