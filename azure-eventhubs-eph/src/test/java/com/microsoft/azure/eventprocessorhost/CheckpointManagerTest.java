@@ -35,14 +35,14 @@ public class CheckpointManagerTest
 		twoManagerCheckpointSmokeTest(false, 8);
 	}
 	
-	@Test
+	//@Test
 	public void singleManagerAzureCheckpointSmokeTest() throws Exception
 	{
 		RealEventHubUtilities rUtils = new RealEventHubUtilities();
 		singleManagerCheckpointSmokeTest(true, rUtils.getPartitionIdsForTest().size());
 	}
 	
-	@Test
+	//@Test
 	public void twoManagerAzureCheckpointSmokeTest() throws Exception
 	{
 		RealEventHubUtilities rUtils = new RealEventHubUtilities();

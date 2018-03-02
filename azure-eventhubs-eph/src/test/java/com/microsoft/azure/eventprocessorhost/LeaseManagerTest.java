@@ -29,7 +29,7 @@ public class LeaseManagerTest
 		singleManagerLeaseSmokeTest(false, 8);
 	}
 	
-	@Test
+	//@Test
 	public void singleManagerAzureLeaseSmokeTest() throws Exception
 	{
 		RealEventHubUtilities rUtils = new RealEventHubUtilities();
@@ -42,7 +42,7 @@ public class LeaseManagerTest
 		twoManagerLeaseStealingTest(false);
 	}
 	
-	@Test
+	//@Test
 	public void twoManangerAzureLeaseStealingTest() throws Exception
 	{
 		twoManagerLeaseStealingTest(true);

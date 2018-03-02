@@ -67,7 +67,7 @@ public class Repros extends TestBase
 		}
 	}
 
-	@Test
+	//@Test
 	public void infiniteReceive() throws Exception
 	{
 		System.out.println("infiniteReceive starting");
@@ -107,7 +107,7 @@ public class Repros extends TestBase
 		host.unregisterEventProcessor();
 	}
 
-	@Test
+	//@Test
 	public void infiniteReceive2Hosts() throws Exception
 	{
 		System.out.println("infiniteReceive2Hosts starting");
@@ -155,7 +155,7 @@ public class Repros extends TestBase
 	 * receivers. Then we finally determined that a thread was leaked every time a receiver was closed, with no special
 	 * sauce required.
 	 */
-	@Test
+	//@Test
 	public void rawEpochStealing() throws Exception
 	{
 		RealEventHubUtilities utils = new RealEventHubUtilities();
